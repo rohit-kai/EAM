@@ -25,6 +25,21 @@ const toggleNav = function () {
 addEventOnElements(navTogglers, 'click', toggleNav);
 
 /**
+ * CLOSE MOBILE NAV when a nav link is clicked
+ */
+const navLinks = document.querySelectorAll('.navbar-link');
+
+const closeNav = function () {
+  navbar.classList.remove('active');
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+};
+
+navLinks.forEach(function (link) {
+  link.addEventListener('click', closeNav);
+});
+
+/**
  * active header when window scroll down to 100px
  */
 const header = document.querySelector('[data-header]');

@@ -1,45 +1,54 @@
-# EAM — Real Estate & Hospitality Investment
+<div align="center">
+  
+  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/crafti)
+  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/crafti?style=social)
+  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/crafti?style=social)
+[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
+  [![YouTube Video Views](https://img.shields.io/youtube/views/IcJFLGOY0DU?style=social)](https://youtu.be/IcJFLGOY0DU)
 
-A luxury, fully-responsive digital presence for **EAM Real Estate & Hospitality Investment**, showcasing landmark living, ultra-luxury hospitality portfolios, architectural developments, and strategic investment opportunities.
+  <br />
+  <br />
 
----
+  <h2 align="center">Crafti - Agency Website</h2>
 
-## Highlights
+  Crafti is a fully responsive agency website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
 
-- **Cinematic Aerial Hero**: High-definition drone city horizon with subtle ambient motion and luxury sunset aesthetics.
-- **Brand Identity**: Custom EAM architectural skyscraper emblem with refined serif typography and gold accents.
-- **Bespoke Portfolio Showcase**: Featured residences, five-star resorts, and private member retreats.
-- **Legacy & History Page**: Dedicated interactive timeline celebrating 25+ years of milestones, leadership, and vision.
-- **Fully Responsive**: Crafted with modern vanilla HTML5, CSS3, and JavaScript, optimized for ultra-fast loading across all device screens.
+  <a href="https://codewithsadee.github.io/crafti/"><strong>➥ Live Demo</strong></a>
 
----
+</div>
 
-## Tech Stack
+<br />
 
-- **Markup**: Semantic HTML5
-- **Styling**: Vanilla CSS3 (Custom Design System with CSS variables)
-- **Icons**: Ionicons SVG Icons
-- **Typography**: Cormorant Garamond & Plus Jakarta Sans via Google Fonts
+### Demo Screeshots
 
----
+![Crafti Desktop Demo](./readme-images/desktop.png "Desktop Demo")
 
-## Running Locally
+### Prerequisites
 
-To run the project locally without installing build dependencies, choose either option below:
+Before you begin, ensure you have met the following requirements:
 
-### Option 1: Using `npx serve` (Node.js)
+* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+
+### Run Locally
+
+To run **Crafti** locally, run this command on your git bash:
+
+Linux and macOS:
+
 ```bash
-npx serve .
+sudo git clone https://github.com/codewithsadee/crafti.git
 ```
 
-### Option 2: Using Python built-in server
+Windows:
+
 ```bash
-python -m http.server 3000
+git clone https://github.com/codewithsadee/crafti.git
 ```
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
----
+### Contact
 
-## License
+If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
 
-&copy; 2026 EAM Real Estate & Hospitality Investment. All Rights Reserved.
+### License
+
+[MIT](https://choosealicense.com/licenses/mit/)
