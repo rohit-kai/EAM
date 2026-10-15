@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#0D172A"/>
+  <!-- Navy and Gold Skyscraper Towers -->
+  <path d="M22 40V19L27 15V40H22Z" fill="#3B82F6"/>
+  <path d="M29 40V11L35 7V40H29Z" fill="#D4AF37"/>
+  <path d="M37 40V15L43 19V40H37Z" fill="#D4AF37"/>
+  <path d="M45 40V22L49 25V40H45Z" fill="#3B82F6"/>
+  <!-- Curved Ground / Expressway lines -->
+  <path d="M12 47C24 43 40 43 52 47" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M16 52C26 49 38 49 48 52" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+</svg>
