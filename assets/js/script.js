@@ -25,19 +25,93 @@ const toggleNav = function () {
 addEventOnElements(navTogglers, 'click', toggleNav);
 
 /**
- * CLOSE MOBILE NAV when a nav link is clicked
+ * NAVBAR NAVIGATION & SMOOTH SCROLLING
  */
 const navLinks = document.querySelectorAll('.navbar-link');
 
 const closeNav = function () {
-  navbar.classList.remove('active');
-  overlay.classList.remove('active');
+  if (navbar) navbar.classList.remove('active');
+  if (overlay) overlay.classList.remove('active');
   document.body.style.overflow = '';
 };
 
 navLinks.forEach(function (link) {
-  link.addEventListener('click', closeNav);
+  link.addEventListener('click', function (e) {
+    closeNav();
+
+    const href = link.getAttribute('href');
+    const isHome = link.textContent.trim().toLowerCase() === 'home' || href === './index.html' || href === '#';
+    const isCurrentIndex = window.location.pathname.endsWith('index.html') || 
+                           window.location.pathname === '/' || 
+                           window.location.pathname.endsWith('/crafti/') || 
+                           window.location.pathname.endsWith('/crafti');
+
+    if (isHome && isCurrentIndex) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      history.replaceState(null, '', window.location.pathname);
+      return;
+    }
+
+    if (href && href.startsWith('#') && href.length > 1) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        history.replaceState(null, '', href);
+      }
+    }
+  });
 });
+
+/**
+ * SCROLLSPY: Highlight active nav link on scroll
+ */
+const isIndex = window.location.pathname.endsWith('index.html') || 
+                window.location.pathname === '/' || 
+                window.location.pathname.endsWith('/crafti/') || 
+                window.location.pathname.endsWith('/crafti');
+
+if (isIndex) {
+  const sections = ['about', 'portfolio', 'contact'];
+  const homeLink = Array.from(navLinks).find(l => l.textContent.trim().toLowerCase() === 'home');
+
+  window.addEventListener('scroll', function () {
+    const scrollPos = window.scrollY + 180;
+
+    if (window.scrollY < 300) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      if (homeLink) homeLink.classList.add('active');
+      return;
+    }
+
+    sections.forEach(function (secId) {
+      const section = document.getElementById(secId);
+      if (!section) return;
+
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const activeLink = document.querySelector(`.navbar-link[href="#${secId}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  });
+}
 
 /**
  * active header when window scroll down to 100px
